@@ -125,6 +125,19 @@ public class TestComplexForm {
         assertEquals((8.0-14.286)/(166.860), complexForm.f1LowerSquare(), delta);
     }
 
+    @Test
+    public void testFormF2LowerSquare(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(10.0/54, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        assertEquals(84.0/160, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm5);
+        assertEquals((84.0-22.45)/(166.860), complexForm.f2LowerSquare(), delta);
+    }
 
 
 }
