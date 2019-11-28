@@ -47,5 +47,13 @@ public class SimpleForm {
         return f1()/(c + d);
     }
 
-
+    /*
+     * Second lower round form
+     * */
+    public double f2r() {
+        if (c + d == 0.0){
+            return 0.0;
+        }
+        return f2()/(c + d);
+    }
 }
