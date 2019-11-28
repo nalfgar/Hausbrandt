@@ -73,6 +73,17 @@ public class ComplexForm {
         return sumOfCD == 0.0 ? 0.0 : f2() / sumOfCD;
     }
 
+    /*
+     * First lower round form
+     * */
+    public double f1UpperRound() {
+        double sumOfAB = 0.0;
+        for (SimpleForm simpleForm : list) {
+            sumOfAB += simpleForm.getSumOfAB();
+        }
+        return sumOfAB == 0.0 ? 0.0 : f1() / sumOfAB;
+    }
+
 
 
     @Override
@@ -81,4 +92,5 @@ public class ComplexForm {
                 "list=" + list +
                 '}';
     }
+
 }
