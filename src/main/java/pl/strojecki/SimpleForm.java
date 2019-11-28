@@ -98,4 +98,13 @@ public class SimpleForm {
         }
         return f1()/sum;
     }
+
+    public double f2UpperSquare() {
+        double sum = (a*a)+(b*b);
+        if (sum == 0.0){
+            return 0.0;
+        }
+        return f2()/sum;
+
+    }
 }
