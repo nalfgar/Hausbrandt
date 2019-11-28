@@ -116,7 +116,7 @@ public class SimpleForm {
     }
 
     double getSumOfC2D2(){
-        return (c)+(d);
+        return (c*c)+(d*d);
     }
 
     public double getA() {
