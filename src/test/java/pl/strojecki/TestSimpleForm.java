@@ -1,11 +1,7 @@
 package pl.strojecki;
 
 import org.junit.Test;
-import pl.strojecki.SimpleForm;
 
-import java.util.List;
-
-import static java.lang.Float.NaN;
 import static junit.framework.TestCase.assertEquals;
 
 public class TestSimpleForm {
@@ -42,19 +38,26 @@ public class TestSimpleForm {
     }
 
     @Test
-    public void testFormF1Round(){
-        assertEquals(0.0, simpleForm1.f1r(), delta);
-        assertEquals(0.0, simpleForm2.f1r(), delta);
-        assertEquals(0.2, simpleForm3.f1r(), delta);
-        assertEquals(0.428, simpleForm4.f1r(), delta);
+    public void testFormF1BottomRound(){
+        assertEquals(0.0, simpleForm1.f1LowerRound(), delta);
+        assertEquals(0.0, simpleForm2.f1LowerRound(), delta);
+        assertEquals(0.2, simpleForm3.f1LowerRound(), delta);
+        assertEquals(0.428, simpleForm4.f1LowerRound(), delta);
     }
 
     @Test
-    public void testFormF2Round(){
-        assertEquals(0.0, simpleForm1.f2r(), delta);
-        assertEquals(0.0, simpleForm2.f2r(), delta);
-        assertEquals(1.0, simpleForm3.f2r(), delta);
-        assertEquals(5.286, simpleForm4.f2r(), delta);
+    public void testFormF2BottomRound(){
+        assertEquals(0.0, simpleForm1.f2LowerRound(), delta);
+        assertEquals(0.0, simpleForm2.f2LowerRound(), delta);
+        assertEquals(1.0, simpleForm3.f2LowerRound(), delta);
+        assertEquals(5.286, simpleForm4.f2LowerRound(), delta);
+    }
 
+    @Test
+    public void testFormF1UpperRound(){
+        assertEquals(0.0, simpleForm1.f1UpperRound(), delta);
+        assertEquals(0.0, simpleForm2.f1UpperRound(), delta);
+        assertEquals(1.0, simpleForm3.f1UpperRound(), delta);
+        assertEquals(0.6, simpleForm4.f1UpperRound(), delta);
     }
 }

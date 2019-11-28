@@ -40,20 +40,30 @@ public class SimpleForm {
     /*
      * First lower round form
      * */
-    public double f1r() {
-        if (c + d == 0.0){
+    public double f1LowerRound() {
+        double sum = c+d;
+        if (sum == 0.0){
             return 0.0;
         }
-        return f1()/(c + d);
+        return f1()/sum;
     }
 
     /*
      * Second lower round form
      * */
-    public double f2r() {
-        if (c + d == 0.0){
+    public double f2LowerRound() {
+        double sum = c+d;
+        if (sum == 0.0){
             return 0.0;
         }
-        return f2()/(c + d);
+        return f2()/sum;
+    }
+
+    public double f1UpperRound() {
+        double sum = a+b;
+        if (sum == 0.0){
+            return 0.0;
+        }
+        return f1()/sum;
     }
 }
