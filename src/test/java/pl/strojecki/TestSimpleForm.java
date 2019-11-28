@@ -15,7 +15,6 @@ public class TestSimpleForm {
 
     @Test
     public void testFormF1(){
-
         assertEquals(0.0, simpleForm1.f1(), delta);
         assertEquals(0.0, simpleForm2.f1(), delta);
         assertEquals(2.0, simpleForm3.f1(), delta);
