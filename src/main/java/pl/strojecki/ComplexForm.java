@@ -31,4 +31,23 @@ public class ComplexForm {
         }
         return result;
     }
+
+    /*
+    * The second form
+    * */
+    Double f2(){
+        Double result = 0.0;
+
+        for (int i = 0; i < list.size(); i++) {
+            result+=list.get(i).f2();
+        }
+        return result;
+    }
+
+    /*
+    * The zero form
+    * */
+    Double f0(){
+        return f2() == 0.0 ? 0.0 : f1()/f2();
+    }
 }

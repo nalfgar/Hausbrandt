@@ -14,7 +14,7 @@ public class TestComplexForm {
     private SimpleForm simpleForm5 = new SimpleForm(5.0, 9.0, 0.154, -2.58);
 
     @Test
-    public void testConstructor(){
+    public void testFormF1(){
         ComplexForm complexForm = new ComplexForm(simpleForm1);
         assertEquals(0.0, complexForm.f1(), delta);
         complexForm.addSimpleForm(simpleForm2);
@@ -26,4 +26,34 @@ public class TestComplexForm {
         complexForm.addSimpleForm(simpleForm5);
         assertEquals(-6.286, complexForm.f1(), delta);
     }
+
+    @Test
+    public void testFormF2(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f2(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f2(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(10.0, complexForm.f2(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        assertEquals(84.0, complexForm.f2(), delta);
+        complexForm.addSimpleForm(simpleForm5);
+        assertEquals(61.55, complexForm.f2(), delta);
+    }
+
+    @Test
+    public void testFormF0(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f0(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f0(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(0.2, complexForm.f0(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        assertEquals(0.095, complexForm.f0(), delta);
+        complexForm.addSimpleForm(simpleForm5);
+        assertEquals(-0.102, complexForm.f0(), delta);
+    }
+
+
 }
