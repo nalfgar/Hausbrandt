@@ -84,7 +84,59 @@ public class ComplexForm {
         return sumOfAB == 0.0 ? 0.0 : f1() / sumOfAB;
     }
 
+    /*
+     * Second lower round form
+     * */
+    public double f2UpperRound() {
+        double sumOfAB = 0.0;
+        for (SimpleForm simpleForm : list) {
+            sumOfAB += simpleForm.getSumOfAB();
+        }
+        return sumOfAB == 0.0 ? 0.0 : f2() / sumOfAB;
+    }
+    /*
+     * First lower square form
+     * */
+    public double f1LowerSquare() {
+        double sumOfCD = 0.0;
+        for (SimpleForm simpleForm : list) {
+            sumOfCD += simpleForm.getSumOfC2D2();
+        }
+        return sumOfCD == 0.0 ? 0.0 : f1() / sumOfCD;
+    }
 
+    /*
+     * First lower square form
+     * */
+    public double f2LowerSquare() {
+        double sumOfCD = 0.0;
+        for (SimpleForm simpleForm : list) {
+            sumOfCD += simpleForm.getSumOfC2D2();
+        }
+        return sumOfCD == 0.0 ? 0.0 : f2() / sumOfCD;
+    }
+
+    /*
+     * First lower square form
+     * */
+    public double f1UpperSquare() {
+        double sumOfAB = 0.0;
+        for (SimpleForm simpleForm : list) {
+            sumOfAB += simpleForm.getSumOfA2B2();
+        }
+        return sumOfAB == 0.0 ? 0.0 : f1() / sumOfAB;
+    }
+
+    /*
+     * Second lower square form
+     * */
+    public double f2UpperSquare() {
+        double sumOfAB = 0.0;
+        for (SimpleForm simpleForm : list) {
+            sumOfAB += simpleForm.getSumOfA2B2();
+        }
+        return sumOfAB == 0.0 ? 0.0 : f2() / sumOfAB;
+    }
 
     @Override
     public String toString() {

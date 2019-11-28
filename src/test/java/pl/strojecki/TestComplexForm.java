@@ -97,7 +97,77 @@ public class TestComplexForm {
         assertEquals((8.0-14.286)/26, complexForm.f1UpperRound(), delta);
     }
 
+    @Test
+    public void testFormF2UpperRound(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(10.0/2, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        assertEquals(84.0/12, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm5);
+        assertEquals((84.0-22.45)/26, complexForm.f2UpperRound(), delta);
+    }
 
+    @Test
+    public void testFormF1LowerSquare(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f1LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f1LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(2.0/54, complexForm.f1LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        assertEquals(8.0/160, complexForm.f1LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm5);
+        assertEquals((8.0-14.286)/(166.860), complexForm.f1LowerSquare(), delta);
+    }
+
+    @Test
+    public void testFormF2LowerSquare(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(10.0/54, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        assertEquals(84.0/160, complexForm.f2LowerSquare(), delta);
+        complexForm.addSimpleForm(simpleForm5);
+        assertEquals((84.0-22.45)/(166.860), complexForm.f2LowerSquare(), delta);
+    }
+
+    @Test
+    public void testFormF1UpperSquare(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f1UpperSquare(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f1UpperSquare(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(2.0/2, complexForm.f1UpperSquare(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        // TODO calculate and uncomment
+//        assertEquals(8.0/12, complexForm.f1UpperSquare(), delta);
+//        complexForm.addSimpleForm(simpleForm5);
+//        assertEquals((8.0-14.286)/26, complexForm.f1UpperSquare(), delta);
+    }
+
+    @Test
+    public void testFormF2UpperSquqre(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f2UpperSquare(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f2UpperSquare(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(10.0/2, complexForm.f2UpperSquare(), delta);
+        // TODO calculate and uncomment
+//        complexForm.addSimpleForm(simpleForm4);
+//        assertEquals(84.0/12, complexForm.f2UpperSquare(), delta);
+//        complexForm.addSimpleForm(simpleForm5);
+//        assertEquals((84.0-22.45)/26, complexForm.f2UpperSquare(), delta);
+    }
 
 
 }
