@@ -66,4 +66,13 @@ public class SimpleForm {
         }
         return f1()/sum;
     }
+
+    public double f2UpperRound() {
+        double sum = a+b;
+        if (sum == 0.0){
+            return 0.0;
+        }
+        return f2()/sum;
+
+    }
 }
