@@ -84,4 +84,12 @@ public class TestSimpleForm {
         assertEquals(0.192, simpleForm3.f2LowerSquare(), delta);
         assertEquals(0.698, simpleForm4.f2LowerSquare(), delta);
     }
+
+    @Test
+    public void testFormF1UpperSquare(){
+        assertEquals(0.0, simpleForm1.f1UpperSquare(), delta);
+        assertEquals(0.0, simpleForm2.f1UpperSquare(), delta);
+        assertEquals(1.0, simpleForm3.f1UpperSquare(), delta);
+        assertEquals(0.115, simpleForm4.f1UpperSquare(), delta);
+    }
 }

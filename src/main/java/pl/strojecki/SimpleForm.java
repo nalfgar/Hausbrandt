@@ -90,4 +90,12 @@ public class SimpleForm {
         }
         return f2()/sum;
     }
+
+    public double f1UpperSquare() {
+        double sum = (a*a)+(b*b);
+        if (sum == 0.0){
+            return 0.0;
+        }
+        return f1()/sum;
+    }
 }
