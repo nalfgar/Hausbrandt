@@ -5,12 +5,12 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 public class TestSimpleForm {
-    Double delta = 0.001;
+    private final Double delta = 0.001;
 
-    SimpleForm simpleForm1 = new SimpleForm(0.0, 0.0, 0.0, 0.0);
-    SimpleForm simpleForm2 = new SimpleForm(0.0, 0.0, 1.0, 1.0);
-    SimpleForm simpleForm3 = new SimpleForm(1.0, 1.0, 4.0, 6.0);
-    SimpleForm simpleForm4 = new SimpleForm(4.0, 6.0, 5.0, 9.0);
+    private SimpleForm simpleForm1 = new SimpleForm(0.0, 0.0, 0.0, 0.0);
+    private SimpleForm simpleForm2 = new SimpleForm(0.0, 0.0, 1.0, 1.0);
+    private SimpleForm simpleForm3 = new SimpleForm(1.0, 1.0, 4.0, 6.0);
+    private SimpleForm simpleForm4 = new SimpleForm(4.0, 6.0, 5.0, 9.0);
 
     @Test
     public void testFormF1(){
@@ -75,5 +75,13 @@ public class TestSimpleForm {
         assertEquals(0.0, simpleForm2.f1LowerSquare(), delta);
         assertEquals(0.038, simpleForm3.f1LowerSquare(), delta);
         assertEquals(0.056, simpleForm4.f1LowerSquare(), delta);
+    }
+
+    @Test
+    public void testFormF2LowerSquare(){
+        assertEquals(0.0, simpleForm1.f2LowerSquare(), delta);
+        assertEquals(0.0, simpleForm2.f2LowerSquare(), delta);
+        assertEquals(0.192, simpleForm3.f2LowerSquare(), delta);
+        assertEquals(0.698, simpleForm4.f2LowerSquare(), delta);
     }
 }
