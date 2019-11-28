@@ -21,4 +21,11 @@ public class SimpleForm {
     public Double f2() {
         return (a*c) + (b*d);
     }
+
+    public Double f0() {
+        if (f2() == 0.0){
+            return 0.0;
+        }
+        return f1()/f2();
+    }
 }

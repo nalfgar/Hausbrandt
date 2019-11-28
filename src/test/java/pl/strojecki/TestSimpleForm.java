@@ -3,8 +3,8 @@ package pl.strojecki;
 import org.junit.Test;
 import pl.strojecki.SimpleForm;
 
+import static java.lang.Float.NaN;
 import static junit.framework.TestCase.assertEquals;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestSimpleForm {
     Double delta = 0.001;
@@ -31,5 +31,11 @@ public class TestSimpleForm {
         assertEquals(74.0, simpleForm4.f2(), delta);
     }
 
-
+    @Test
+    public void testFormF0(){
+        assertEquals(0.0, simpleForm1.f0(), delta);
+        assertEquals(0.0, simpleForm2.f0(), delta);
+        assertEquals(0.2, simpleForm3.f0(), delta);
+        assertEquals(0.081, simpleForm4.f0(), delta);
+    }
 }
