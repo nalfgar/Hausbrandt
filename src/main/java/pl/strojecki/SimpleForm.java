@@ -3,12 +3,12 @@ package pl.strojecki;
 import java.util.Objects;
 
 public class SimpleForm {
-    private Double a;
-    private Double b;
-    private Double c;
-    private Double d;
+    private double a;
+    private double b;
+    private double c;
+    private double d;
 
-    public SimpleForm(Double a, Double b, Double c, Double d) {
+    public SimpleForm(double a, double b, double c, double d) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -18,21 +18,21 @@ public class SimpleForm {
     /*
     * The first form
     * */
-    public Double f1() {
+    public double f1() {
         return (a*d) - (b*c);
     }
 
     /*
      * The second form
      * */
-    public Double f2() {
+    public double f2() {
         return (a*c) + (b*d);
     }
 
     /*
      * The zero form
      * */
-    public Double f0() {
+    public double f0() {
         return f2() == 0.0 ? 0.0 : f1()/f2();
     }
 
@@ -103,51 +103,51 @@ public class SimpleForm {
         return sum == 0.0 ? 0.0 : f2()/sum;
     }
 
-    Double getSumOfAB(){
+    double getSumOfAB(){
         return a+b;
     }
 
-    Double getSumOfCD(){
+    double getSumOfCD(){
         return c+d;
     }
 
-    Double getSumOfA2B2(){
+    double getSumOfA2B2(){
         return (a*a)+(b*b);
     }
 
-    Double getSumOfC2D2(){
+    double getSumOfC2D2(){
         return (c)+(d);
     }
 
-    public Double getA() {
+    public double getA() {
         return a;
     }
 
-    public void setA(Double a) {
+    public void setA(double a) {
         this.a = a;
     }
 
-    public Double getB() {
+    public double getB() {
         return b;
     }
 
-    public void setB(Double b) {
+    public void setB(double b) {
         this.b = b;
     }
 
-    public Double getC() {
+    public double getC() {
         return c;
     }
 
-    public void setC(Double c) {
+    public void setC(double c) {
         this.c = c;
     }
 
-    public Double getD() {
+    public double getD() {
         return d;
     }
 
-    public void setD(Double d) {
+    public void setD(double d) {
         this.d = d;
     }
 
