@@ -84,6 +84,17 @@ public class ComplexForm {
         return sumOfAB == 0.0 ? 0.0 : f1() / sumOfAB;
     }
 
+    /*
+     * Second lower round form
+     * */
+    public double f2UpperRound() {
+        double sumOfAB = 0.0;
+        for (SimpleForm simpleForm : list) {
+            sumOfAB += simpleForm.getSumOfAB();
+        }
+        return sumOfAB == 0.0 ? 0.0 : f2() / sumOfAB;
+    }
+
 
 
     @Override

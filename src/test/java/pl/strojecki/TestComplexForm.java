@@ -97,6 +97,20 @@ public class TestComplexForm {
         assertEquals((8.0-14.286)/26, complexForm.f1UpperRound(), delta);
     }
 
+    @Test
+    public void testFormF2UpperRound(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(10.0/2, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+        assertEquals(84.0/12, complexForm.f2UpperRound(), delta);
+        complexForm.addSimpleForm(simpleForm5);
+        assertEquals((84.0-22.45)/26, complexForm.f2UpperRound(), delta);
+    }
+
 
 
 
