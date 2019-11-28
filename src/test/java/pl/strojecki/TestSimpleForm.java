@@ -3,6 +3,8 @@ package pl.strojecki;
 import org.junit.Test;
 import pl.strojecki.SimpleForm;
 
+import java.util.List;
+
 import static java.lang.Float.NaN;
 import static junit.framework.TestCase.assertEquals;
 
@@ -37,5 +39,13 @@ public class TestSimpleForm {
         assertEquals(0.0, simpleForm2.f0(), delta);
         assertEquals(0.2, simpleForm3.f0(), delta);
         assertEquals(0.081, simpleForm4.f0(), delta);
+    }
+
+    @Test
+    public void testFormF1Round(){
+        assertEquals(0.0, simpleForm1.f1r(), delta);
+        assertEquals(0.0, simpleForm2.f1r(), delta);
+        assertEquals(0.2, simpleForm3.f1r(), delta);
+        assertEquals(0.428, simpleForm4.f1r(), delta);
     }
 }
