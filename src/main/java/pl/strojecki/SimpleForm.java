@@ -59,6 +59,9 @@ public class SimpleForm {
         return f2()/sum;
     }
 
+    /*
+     * First upper round form
+     * */
     public double f1UpperRound() {
         double sum = a+b;
         if (sum == 0.0){
@@ -67,6 +70,9 @@ public class SimpleForm {
         return f1()/sum;
     }
 
+    /*
+     * Second upper round form
+     * */
     public double f2UpperRound() {
         double sum = a+b;
         if (sum == 0.0){
@@ -75,6 +81,9 @@ public class SimpleForm {
         return f2()/sum;
     }
 
+    /*
+     * First lower square form
+     * */
     public double f1LowerSquare() {
         double sum = (c*c)+(d*d);
         if (sum == 0.0){
@@ -83,6 +92,9 @@ public class SimpleForm {
         return f1()/sum;
     }
 
+    /*
+     * Second lower square form
+     * */
     public double f2LowerSquare() {
         double sum = (c*c)+(d*d);
         if (sum == 0.0){
@@ -91,6 +103,9 @@ public class SimpleForm {
         return f2()/sum;
     }
 
+    /*
+     * First upper square form
+     * */
     public double f1UpperSquare() {
         double sum = (a*a)+(b*b);
         if (sum == 0.0){
@@ -99,12 +114,15 @@ public class SimpleForm {
         return f1()/sum;
     }
 
+    /*
+     * Second upper square form
+     * */
     public double f2UpperSquare() {
         double sum = (a*a)+(b*b);
         if (sum == 0.0){
             return 0.0;
         }
         return f2()/sum;
-
     }
+
 }
