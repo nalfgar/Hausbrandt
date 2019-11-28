@@ -5,7 +5,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 public class TestSimpleForm {
-    private final Double delta = 0.001;
+    private final double delta = 0.001;
 
     private SimpleForm simpleForm1 = new SimpleForm(0.0, 0.0, 0.0, 0.0);
     private SimpleForm simpleForm2 = new SimpleForm(0.0, 0.0, 1.0, 1.0);
