@@ -27,7 +27,7 @@ public class ComplexForm {
         Double result = 0.0;
 
         for (SimpleForm simpleForm : list) {
-            result+=simpleForm.f1();
+            result += simpleForm.f1();
         }
         return result;
     }
@@ -39,7 +39,7 @@ public class ComplexForm {
         Double result = 0.0;
 
         for (SimpleForm simpleForm : list) {
-            result+=simpleForm.f2();
+            result += simpleForm.f2();
         }
         return result;
     }
@@ -48,18 +48,24 @@ public class ComplexForm {
     * The zero form
     * */
     Double f0(){
-        return f2() == 0.0 ? 0.0 : f1()/f2();
+        return f2() == 0.0 ? 0.0 : f1() / f2();
     }
 
     /*
      * First lower round form
      * */
     public double f1LowerRound() {
-        double sum = 0;
+        Double sumOfCD = 0.0;
         for (SimpleForm simpleForm : list) {
-            sum += simpleForm.getSumOfCD();
+            sumOfCD += simpleForm.getSumOfCD();
         }
-        return sum == 0.0 ? 0.0 : f1()/sum;
+        return sumOfCD == 0.0 ? 0.0 : f1() / sumOfCD;
     }
 
+    @Override
+    public String toString() {
+        return "ComplexForm{" +
+                "list=" + list +
+                '}';
+    }
 }

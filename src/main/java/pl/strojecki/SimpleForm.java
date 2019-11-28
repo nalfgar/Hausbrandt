@@ -153,12 +153,12 @@ public class SimpleForm {
 
     @Override
     public String toString() {
-        return "SimpleForm{" +
+        return "\n\tSimpleForm{" +
                 "a=" + a +
                 ", b=" + b +
                 ", c=" + c +
                 ", d=" + d +
-                '}';
+                "}";
     }
 
     @Override
