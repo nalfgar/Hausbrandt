@@ -55,5 +55,18 @@ public class TestComplexForm {
         assertEquals(-0.102, complexForm.f0(), delta);
     }
 
+    @Test
+    public void testFormF1LowerRound(){
+        ComplexForm complexForm = new ComplexForm(simpleForm1);
+        assertEquals(0.0, complexForm.f1LowerRound(), delta);
+        complexForm.addSimpleForm(simpleForm2);
+        assertEquals(0.0, complexForm.f0(), delta);
+        complexForm.addSimpleForm(simpleForm3);
+        assertEquals(0.2, complexForm.f0(), delta);
+        complexForm.addSimpleForm(simpleForm4);
+    }
+
+
+
 
 }

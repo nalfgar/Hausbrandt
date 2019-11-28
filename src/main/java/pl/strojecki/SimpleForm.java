@@ -103,6 +103,22 @@ public class SimpleForm {
         return sum == 0.0 ? 0.0 : f2()/sum;
     }
 
+    Double getSumOfAB(){
+        return a+b;
+    }
+
+    Double getSumOfCD(){
+        return c+d;
+    }
+
+    Double getSumOfA2B2(){
+        return (a*a)+(b*b);
+    }
+
+    Double getSumOfC2D2(){
+        return (c)+(d);
+    }
+
     public Double getA() {
         return a;
     }
