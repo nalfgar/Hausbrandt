@@ -16,7 +16,7 @@ public class SimpleForm {
     }
 
     /*
-    *The first form
+    * The first form
     * */
     public Double f1() {
         return (a*d) - (b*c);
