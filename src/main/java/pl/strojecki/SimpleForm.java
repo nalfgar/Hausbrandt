@@ -33,10 +33,7 @@ public class SimpleForm {
      * The zero form
      * */
     public Double f0() {
-        if (f2() == 0.0){
-            return 0.0;
-        }
-        return f1()/f2();
+        return f2() == 0.0 ? 0.0 : f1()/f2();
     }
 
     /*
@@ -44,10 +41,7 @@ public class SimpleForm {
      * */
     public double f1LowerRound() {
         double sum = c+d;
-        if (sum == 0.0){
-            return 0.0;
-        }
-        return f1()/sum;
+        return sum == 0.0 ? 0.0 : f1()/sum;
     }
 
     /*
@@ -55,10 +49,7 @@ public class SimpleForm {
      * */
     public double f2LowerRound() {
         double sum = c+d;
-        if (sum == 0.0){
-            return 0.0;
-        }
-        return f2()/sum;
+        return sum == 0.0 ? 0.0 : f2()/sum;
     }
 
     /*
@@ -77,10 +68,7 @@ public class SimpleForm {
      * */
     public double f2UpperRound() {
         double sum = a+b;
-        if (sum == 0.0){
-            return 0.0;
-        }
-        return f2()/sum;
+        return sum == 0.0 ? 0.0 : f2()/sum;
     }
 
     /*
@@ -88,10 +76,7 @@ public class SimpleForm {
      * */
     public double f1LowerSquare() {
         double sum = (c*c)+(d*d);
-        if (sum == 0.0){
-            return 0.0;
-        }
-        return f1()/sum;
+        return sum == 0.0 ? 0.0 : f1()/sum;
     }
 
     /*
@@ -99,10 +84,7 @@ public class SimpleForm {
      * */
     public double f2LowerSquare() {
         double sum = (c*c)+(d*d);
-        if (sum == 0.0){
-            return 0.0;
-        }
-        return f2()/sum;
+        return sum == 0.0 ? 0.0 : f2()/sum;
     }
 
     /*
@@ -110,10 +92,7 @@ public class SimpleForm {
      * */
     public double f1UpperSquare() {
         double sum = (a*a)+(b*b);
-        if (sum == 0.0){
-            return 0.0;
-        }
-        return f1()/sum;
+        return sum == 0.0 ? 0.0 : f1()/sum;
     }
 
     /*
@@ -121,10 +100,7 @@ public class SimpleForm {
      * */
     public double f2UpperSquare() {
         double sum = (a*a)+(b*b);
-        if (sum == 0.0){
-            return 0.0;
-        }
-        return f2()/sum;
+        return sum == 0.0 ? 0.0 : f2()/sum;
     }
 
     public Double getA() {
