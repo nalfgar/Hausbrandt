@@ -1,3 +1,5 @@
+package pl.strojecki;
+
 public class SimpleForm {
     private Double a;
     private Double b;
@@ -14,5 +16,9 @@ public class SimpleForm {
 
     public Double f1() {
         return (a*d) - (b*c);
+    }
+
+    public Double f2() {
+        return (a*c) + (b*d);
     }
 }
