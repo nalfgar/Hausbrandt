@@ -73,6 +73,14 @@ public class SimpleForm {
             return 0.0;
         }
         return f2()/sum;
+    }
+
+    public double f1LowerSquare() {
+        double sum = (c*c)+(d*d);
+        if (sum == 0.0){
+            return 0.0;
+        }
+        return f1()/sum;
 
     }
 }
