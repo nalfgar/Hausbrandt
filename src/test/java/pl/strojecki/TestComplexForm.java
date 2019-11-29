@@ -162,6 +162,7 @@ public class TestComplexForm {
 
     @Test
     public void testDataFromInternet(){
+        // https://sites.google.com/site/obliczeniageodezyjne/pomocnicze-symbole-obliczeniowe
         SimpleForm simpleFormA = new SimpleForm(4.243, 5.071, 1.472, 8.284);
         SimpleForm simpleFormB = new SimpleForm(3.456, 1.246, 7.392, 5.853);
         ComplexForm complexForm = new ComplexForm(simpleFormA, simpleFormB);
