@@ -1,9 +1,13 @@
 package pl.strojecki;
 
-import java.util.ArrayList;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.LinkedList;
 import java.util.List;
 
+@ToString
+@EqualsAndHashCode
 public class ComplexForm {
     private List<SimpleForm> list = new LinkedList<>();
 
@@ -137,12 +141,4 @@ public class ComplexForm {
         }
         return sumOfAB == 0.0 ? 0.0 : f2() / sumOfAB;
     }
-
-    @Override
-    public String toString() {
-        return "ComplexForm{" +
-                "list=" + list +
-                '}';
-    }
-
 }
