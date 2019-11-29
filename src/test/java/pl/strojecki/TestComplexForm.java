@@ -148,10 +148,6 @@ public class TestComplexForm {
         complexForm.addSimpleForm(simpleForm3);
         assertEquals(2.0/2, complexForm.f1UpperSquare(), delta);
         complexForm.addSimpleForm(simpleForm4);
-        // TODO calculate and uncomment
-//        assertEquals(8.0/12, complexForm.f1UpperSquare(), delta);
-//        complexForm.addSimpleForm(simpleForm5);
-//        assertEquals((8.0-14.286)/26, complexForm.f1UpperSquare(), delta);
     }
 
     @Test
@@ -162,12 +158,27 @@ public class TestComplexForm {
         assertEquals(0.0, complexForm.f2UpperSquare(), delta);
         complexForm.addSimpleForm(simpleForm3);
         assertEquals(10.0/2, complexForm.f2UpperSquare(), delta);
-        // TODO calculate and uncomment
-//        complexForm.addSimpleForm(simpleForm4);
-//        assertEquals(84.0/12, complexForm.f2UpperSquare(), delta);
-//        complexForm.addSimpleForm(simpleForm5);
-//        assertEquals((84.0-22.45)/26, complexForm.f2UpperSquare(), delta);
     }
 
+    @Test
+    public void testDataFromInternet(){
+        SimpleForm simpleFormA = new SimpleForm(4.243, 5.071, 1.472, 8.284);
+        SimpleForm simpleFormB = new SimpleForm(3.456, 1.246, 7.392, 5.853);
+        ComplexForm complexForm = new ComplexForm(simpleFormA, simpleFormB);
+
+        assertEquals(38.702, complexForm.f1(), delta);
+        assertEquals(81.093, complexForm.f2(), delta);
+        assertEquals(0.477, complexForm.f0(), delta);
+
+        assertEquals(1.683, complexForm.f1LowerRound(), delta);
+        assertEquals(3.526, complexForm.f2LowerRound(), delta);
+        assertEquals(2.761, complexForm.f1UpperRound(), delta);
+        assertEquals(5.786, complexForm.f2UpperRound(), delta);
+
+        assertEquals(0.242, complexForm.f1LowerSquare(), delta);
+        assertEquals(0.508, complexForm.f2LowerSquare(), delta);
+        assertEquals(0.676, complexForm.f1UpperSquare(), delta);
+        assertEquals(1.417, complexForm.f2UpperSquare(), delta);
+    }
 
 }
