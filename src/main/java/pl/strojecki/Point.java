@@ -13,7 +13,6 @@ public class Point {
     private double y;
     private double z;
 
-
     public double dX(Point endPoint) {
         return endPoint.getX() - this.getX();
     }
@@ -32,17 +31,20 @@ public class Point {
     public double azimuth(Point endPoint) {
         double dX = dX(endPoint);
         double dY = dY(endPoint);
-        return atan2(dY, dX);
+        return normalizeAngle(atan2(dY, dX));
     }
 
     public double angle(Point leftPoint, Point rightPoint) {
-        double dXleft = dX(leftPoint);
-        double dYleft = dY(leftPoint);
-        double dXright = dX(rightPoint);
-        double dYright = dY(rightPoint);
-        SimpleForm angle = new SimpleForm(dXleft, dYleft, dXright, dYright);
+        double dXLeft = dX(leftPoint);
+        double dYLeft = dY(leftPoint);
+        double dXRight = dX(rightPoint);
+        double dYRight = dY(rightPoint);
+        SimpleForm angleForm = new SimpleForm(dXLeft, dYLeft, dXRight, dYRight);
+        double angle =  atan(angleForm.f0());
+        return normalizeAngle(angle);
+    }
 
-
-        return atan(angle.f0());
+    private double normalizeAngle(double angle) {
+        return angle  < 0.0 ? (2 * PI) + angle : angle;
     }
 }
