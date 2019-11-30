@@ -14,19 +14,24 @@ public class Point {
     private double z;
 
 
-    public double deltaX(Point endPoint) {
+    public double dX(Point endPoint) {
         return endPoint.getX() - this.getX();
     }
 
-    public double deltaY(Point endPoint) {
+    public double dY(Point endPoint) {
         return endPoint.getY() - this.getY();
     }
 
     public double distance(Point endPoint) {
-        double deltaX = deltaX(endPoint);
-        double deltaY = deltaY(endPoint);
-        return sqrt((deltaX*deltaX) + (deltaY*deltaY));
+        double dX = dX(endPoint);
+        double dY = dY(endPoint);
+        return sqrt((dX*dX) + (dY*dY));
     }
 
 
+    public double azimuth(Point endPoint) {
+        double dX = dX(endPoint);
+        double dY = dY(endPoint);
+        return atan2(dY, dX);
+    }
 }

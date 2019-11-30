@@ -18,7 +18,7 @@ public class TestPoint {
     @Test
     public void testDeltas(){
         assertEquals(58.31, a.distance(b), delta);
-
+        assertEquals(0.54042, a.azimuth(b), deltaAngle);
     }
 
 }
