@@ -34,4 +34,15 @@ public class Point {
         double dY = dY(endPoint);
         return atan2(dY, dX);
     }
+
+    public double angle(Point leftPoint, Point rightPoint) {
+        double dXleft = dX(leftPoint);
+        double dYleft = dY(leftPoint);
+        double dXright = dX(rightPoint);
+        double dYright = dY(rightPoint);
+        SimpleForm angle = new SimpleForm(dXleft, dYleft, dXright, dYright);
+
+
+        return atan(angle.f0());
+    }
 }

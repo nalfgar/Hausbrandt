@@ -19,6 +19,7 @@ public class TestPoint {
     public void testDeltas(){
         assertEquals(58.31, a.distance(b), delta);
         assertEquals(0.54042, a.azimuth(b), deltaAngle);
+        assertEquals(1.35212, a.angle(b,c), deltaAngle);
     }
 
 }
