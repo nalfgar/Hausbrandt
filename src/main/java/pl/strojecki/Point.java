@@ -21,12 +21,15 @@ public class Point {
         return endPoint.getY() - this.getY();
     }
 
+    private double normalizeAngle(double angle) {
+        return angle  < 0.0 ? (2 * PI) + angle : angle;
+    }
+
     public double distance(Point endPoint) {
         double dX = dX(endPoint);
         double dY = dY(endPoint);
         return sqrt((dX*dX) + (dY*dY));
     }
-
 
     public double azimuthRadians(Point endPoint) {
         double dX = dX(endPoint);
@@ -34,24 +37,22 @@ public class Point {
         return normalizeAngle(atan2(dY, dX));
     }
 
-    public double angleRadians(Point leftPoint, Point rightPoint) {
-        double dXLeft = dX(leftPoint);
-        double dYLeft = dY(leftPoint);
-        double dXRight = dX(rightPoint);
-        double dYRight = dY(rightPoint);
-        SimpleForm angleForm = new SimpleForm(dXLeft, dYLeft, dXRight, dYRight);
-        double angle =  atan(angleForm.f0());
-        return normalizeAngle(angle);
-    }
-
-    private double normalizeAngle(double angle) {
-        return angle  < 0.0 ? (2 * PI) + angle : angle;
-    }
-
     public double azimuthGradians(Point endPoint) {
         return (200/PI) * azimuthRadians(endPoint);
     }
-    public double angleGradians(Point leftPoint, Point rightPoint) {
-        return (200/PI) * angleRadians(leftPoint, rightPoint);
-    }
+
+//    TODO methods below does not work correct
+//    public double angleRadians(Point leftPoint, Point rightPoint) {
+//        double dXLeft = dX(leftPoint);
+//        double dYLeft = dY(leftPoint);
+//        double dXRight = dX(rightPoint);
+//        double dYRight = dY(rightPoint);
+//        SimpleForm angleForm = new SimpleForm(dXLeft, dYLeft, dXRight, dYRight);
+//        double angle =  atan(angleForm.f0());
+//        return normalizeAngle(angle);
+//    }
+//
+//    public double angleGradians(Point leftPoint, Point rightPoint) {
+//        return (200/PI) * angleRadians(leftPoint, rightPoint);
+//    }
 }
