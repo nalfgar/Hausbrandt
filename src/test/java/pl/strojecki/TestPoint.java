@@ -22,17 +22,6 @@ public class TestPoint {
         assertEquals(63.25, a.distance(c), delta);
         assertEquals(60.83, a.distance(d), delta);
         assertEquals(50.00, a.distance(e), delta);
-
-//        expected angles in radians
-        assertEquals(0.5404, a.azimuth(b), deltaAngle);
-        assertEquals(1.8925, a.azimuth(c), deltaAngle);
-        assertEquals(3.3067, a.azimuth(d), deltaAngle);
-        assertEquals(5.6396, a.azimuth(e), deltaAngle);
-
-        assertEquals(1.3521, a.angle(b, c), deltaAngle);
-        assertEquals(4.9310, a.angle(c, b), deltaAngle);
-
-//        assertEquals();
     }
 
 }

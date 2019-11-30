@@ -28,13 +28,13 @@ public class Point {
     }
 
 
-    public double azimuth(Point endPoint) {
+    public double azimuthRadians(Point endPoint) {
         double dX = dX(endPoint);
         double dY = dY(endPoint);
         return normalizeAngle(atan2(dY, dX));
     }
 
-    public double angle(Point leftPoint, Point rightPoint) {
+    public double angleRadians(Point leftPoint, Point rightPoint) {
         double dXLeft = dX(leftPoint);
         double dYLeft = dY(leftPoint);
         double dXRight = dX(rightPoint);
@@ -46,5 +46,9 @@ public class Point {
 
     private double normalizeAngle(double angle) {
         return angle  < 0.0 ? (2 * PI) + angle : angle;
+    }
+
+    public double angleGradians(Point leftPoint, Point rightPoint) {
+        return (200/PI) * angleRadians(leftPoint, rightPoint);
     }
 }
