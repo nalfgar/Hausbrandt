@@ -33,4 +33,12 @@ public class TestPoint {
         assertEquals(5.6396, a.azimuthRadians(e), deltaAngle);
     }
 
+    @Test
+    public void testAzimuthGrads(){
+        assertEquals(34.4041, a.azimuthGradians(b), deltaAngle);
+        assertEquals(120.48328, a.azimuthGradians(c), deltaAngle);
+        assertEquals(210.51369, a.azimuthGradians(d), deltaAngle);
+        assertEquals(359.03345, a.azimuthGradians(e), deltaAngle);
+    }
+
 }

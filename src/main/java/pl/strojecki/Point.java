@@ -48,6 +48,9 @@ public class Point {
         return angle  < 0.0 ? (2 * PI) + angle : angle;
     }
 
+    public double azimuthGradians(Point endPoint) {
+        return (200/PI) * azimuthRadians(endPoint);
+    }
     public double angleGradians(Point leftPoint, Point rightPoint) {
         return (200/PI) * angleRadians(leftPoint, rightPoint);
     }
