@@ -24,4 +24,13 @@ public class TestPoint {
         assertEquals(50.00, a.distance(e), delta);
     }
 
+    @Test
+    public void testAzimuthRadians(){
+//        expected angles in radians
+        assertEquals(0.5404, a.azimuthRadians(b), deltaAngle);
+        assertEquals(1.8925, a.azimuthRadians(c), deltaAngle);
+        assertEquals(3.3067, a.azimuthRadians(d), deltaAngle);
+        assertEquals(5.6396, a.azimuthRadians(e), deltaAngle);
+    }
+
 }
