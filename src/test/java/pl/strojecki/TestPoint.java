@@ -74,13 +74,16 @@ public class TestPoint {
         assertEquals(350, o.azimuthGrad(h), deltaAngle);
     }
 
-//    @Test
-//    public void testAngleRadians(){
-//        assertEquals(1.3521, a.angleRadians(b, c), deltaAngle);
-//        assertEquals(1.4141, a.angleRadians(c, d), deltaAngle);
-//        assertEquals(2.3329, a.angleRadians(d, e), deltaAngle);
-//        assertEquals(1.1839, a.angleRadians(e, b), deltaAngle);
-//    }
+    @Test
+    public void testAngleRadians(){
+        assertEquals(QUARTER_PI, o.angleRadians(a, b), deltaAngle);
+//        assertEquals(HALF_PI, o.angleRadians(a, c), deltaAngle);
+//        assertEquals(HALF_PI + QUARTER_PI, o.angleRadians(a, d), deltaAngle);
+//        assertEquals(PI, o.angleRadians(a, e), deltaAngle);
+//        assertEquals(PI + QUARTER_PI, o.angleRadians(a, f), deltaAngle);
+//        assertEquals(PI + HALF_PI, o.angleRadians(a, g), deltaAngle);
+        assertEquals(TWO_PI - QUARTER_PI, o.angleRadians(a, h), deltaAngle);
+    }
 
 
 //    @Test
