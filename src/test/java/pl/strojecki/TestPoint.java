@@ -12,6 +12,8 @@ public class TestPoint {
     private final double PI = Math.PI;
     private final double HALF_PI = Math.PI / 2;
     private final double QUARTER_PI = Math.PI / 4;
+    private final double TWO_PI = Math.PI * 2;
+
 
     Point o = new Point(0.0, 0.0);
     Point a = new Point(1.0, 0.0);
@@ -57,8 +59,7 @@ public class TestPoint {
         assertEquals(PI, o.azimuthRadians(e), deltaAngle);
         assertEquals(PI + QUARTER_PI, o.azimuthRadians(f), deltaAngle);
         assertEquals(PI + HALF_PI, o.azimuthRadians(g), deltaAngle);
-        assertEquals(PI + HALF_PI + QUARTER_PI, o.azimuthRadians(h), deltaAngle);
-        assertEquals(0.0, o.azimuthRadians(a), deltaAngle);
+        assertEquals(TWO_PI - QUARTER_PI, o.azimuthRadians(h), deltaAngle);
     }
 
     @Test
@@ -71,7 +72,6 @@ public class TestPoint {
         assertEquals(250.0, o.azimuthGrad(f), deltaAngle);
         assertEquals(300.0, o.azimuthGrad(g), deltaAngle);
         assertEquals(350, o.azimuthGrad(h), deltaAngle);
-        assertEquals(0.0, o.azimuthGrad(a), deltaAngle);
     }
 
 //    @Test
