@@ -13,6 +13,10 @@ public class Point {
     private double y;
     private double z;
 
+    public Point(double x, double y) {
+        this(x, y, 0.0);
+    }
+
     public double dX(Point endPoint) {
         return endPoint.getX() - this.getX();
     }
