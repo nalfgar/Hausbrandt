@@ -3,10 +3,19 @@ package pl.strojecki;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static java.lang.Math.*;
+
 
 public class TestPoint {
     private final double delta = 0.01;
     private final double deltaAngle = 0.0001;
+
+    private final double ANGLE_PI_DIV_4 = PI/4;
+    private final double ANGLE_PI_DIV_2 = PI/2;
+    private final double ANGLE_PI = PI;
+    private final double ANGLE_PI_MULTI_3_2 = PI*(3/2.0);
+    private final double ANGLE_PI_MULTI_2 = PI*2;
+
 
     Point o = new Point(0.0, 0.0);
     Point a = new Point(1.0, 0.0);
@@ -42,14 +51,19 @@ public class TestPoint {
         assertEquals(2.82, b.distance(f), delta);
     }
 
-//    @Test
-//    public void testAzimuthRadians(){
+    @Test
+    public void testAzimuthRadians(){
 //        expected angles in radians
-//        assertEquals(0.5404, a.azimuthRadians(b), deltaAngle);
-//        assertEquals(1.8925, a.azimuthRadians(c), deltaAngle);
-//        assertEquals(3.3067, a.azimuthRadians(d), deltaAngle);
-//        assertEquals(5.6396, a.azimuthRadians(e), deltaAngle);
-//    }
+        assertEquals(0.0, o.azimuthRadians(a), deltaAngle);
+        assertEquals(ANGLE_PI_DIV_4, o.azimuthRadians(b), deltaAngle);
+        assertEquals(ANGLE_PI_DIV_2, o.azimuthRadians(c), deltaAngle);
+        assertEquals(ANGLE_PI_DIV_2 + ANGLE_PI_DIV_4, o.azimuthRadians(d), deltaAngle);
+        assertEquals(ANGLE_PI, o.azimuthRadians(e), deltaAngle);
+        assertEquals(ANGLE_PI + ANGLE_PI_DIV_4, o.azimuthRadians(f), deltaAngle);
+        assertEquals(ANGLE_PI + ANGLE_PI_DIV_2, o.azimuthRadians(g), deltaAngle);
+        assertEquals(ANGLE_PI + ANGLE_PI_DIV_2 + ANGLE_PI_DIV_4, o.azimuthRadians(h), deltaAngle);
+        assertEquals(0.0, o.azimuthRadians(a), deltaAngle);
+    }
 
 //    @Test
 //    public void testAzimuthGrads(){

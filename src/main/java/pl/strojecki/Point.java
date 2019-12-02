@@ -9,6 +9,9 @@ import static java.lang.Math.*;
 @Data
 @AllArgsConstructor
 public class Point {
+    final double PI2 = 2 * PI;
+
+
     private double x;
     private double y;
     private double z;
@@ -26,8 +29,14 @@ public class Point {
     }
 
     private double normalizeAngle(double angle) {
-        return angle  < 0.0 ? (2 * PI) + angle : angle;
-    }
+        while (angle < 0.0) {
+            angle += PI2;
+        }
+        while (angle >= PI2) {
+            angle -= PI2;
+        }
+        return angle;
+        }
 
     public double distance(Point endPoint) {
         double dX = dX(endPoint);
