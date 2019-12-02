@@ -3,19 +3,15 @@ package pl.strojecki;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static java.lang.Math.*;
 
 
 public class TestPoint {
     private final double delta = 0.01;
     private final double deltaAngle = 0.0001;
 
-    private final double ANGLE_PI_DIV_4 = PI/4;
-    private final double ANGLE_PI_DIV_2 = PI/2;
-    private final double ANGLE_PI = PI;
-    private final double ANGLE_PI_MULTI_3_2 = PI*(3/2.0);
-    private final double ANGLE_PI_MULTI_2 = PI*2;
-
+    private final double PI = Math.PI;
+    private final double HALF_PI = Math.PI / 2;
+    private final double QUARTER_PI = Math.PI / 4;
 
     Point o = new Point(0.0, 0.0);
     Point a = new Point(1.0, 0.0);
@@ -55,23 +51,28 @@ public class TestPoint {
     public void testAzimuthRadians(){
 //        expected angles in radians
         assertEquals(0.0, o.azimuthRadians(a), deltaAngle);
-        assertEquals(ANGLE_PI_DIV_4, o.azimuthRadians(b), deltaAngle);
-        assertEquals(ANGLE_PI_DIV_2, o.azimuthRadians(c), deltaAngle);
-        assertEquals(ANGLE_PI_DIV_2 + ANGLE_PI_DIV_4, o.azimuthRadians(d), deltaAngle);
-        assertEquals(ANGLE_PI, o.azimuthRadians(e), deltaAngle);
-        assertEquals(ANGLE_PI + ANGLE_PI_DIV_4, o.azimuthRadians(f), deltaAngle);
-        assertEquals(ANGLE_PI + ANGLE_PI_DIV_2, o.azimuthRadians(g), deltaAngle);
-        assertEquals(ANGLE_PI + ANGLE_PI_DIV_2 + ANGLE_PI_DIV_4, o.azimuthRadians(h), deltaAngle);
+        assertEquals(QUARTER_PI, o.azimuthRadians(b), deltaAngle);
+        assertEquals(HALF_PI, o.azimuthRadians(c), deltaAngle);
+        assertEquals(HALF_PI + QUARTER_PI, o.azimuthRadians(d), deltaAngle);
+        assertEquals(PI, o.azimuthRadians(e), deltaAngle);
+        assertEquals(PI + QUARTER_PI, o.azimuthRadians(f), deltaAngle);
+        assertEquals(PI + HALF_PI, o.azimuthRadians(g), deltaAngle);
+        assertEquals(PI + HALF_PI + QUARTER_PI, o.azimuthRadians(h), deltaAngle);
         assertEquals(0.0, o.azimuthRadians(a), deltaAngle);
     }
 
-//    @Test
-//    public void testAzimuthGrads(){
-//        assertEquals(34.4041, a.azimuthGradians(b), deltaAngle);
-//        assertEquals(120.48328, a.azimuthGradians(c), deltaAngle);
-//        assertEquals(210.51369, a.azimuthGradians(d), deltaAngle);
-//        assertEquals(359.03345, a.azimuthGradians(e), deltaAngle);
-//    }
+    @Test
+    public void testAzimuthGrads(){
+        assertEquals(0.0, o.azimuthGrad(a), deltaAngle);
+        assertEquals(50.0, o.azimuthGrad(b), deltaAngle);
+        assertEquals(100.0, o.azimuthGrad(c), deltaAngle);
+        assertEquals(150.0, o.azimuthGrad(d), deltaAngle);
+        assertEquals(200.0, o.azimuthGrad(e), deltaAngle);
+        assertEquals(250.0, o.azimuthGrad(f), deltaAngle);
+        assertEquals(300.0, o.azimuthGrad(g), deltaAngle);
+        assertEquals(350, o.azimuthGrad(h), deltaAngle);
+        assertEquals(0.0, o.azimuthGrad(a), deltaAngle);
+    }
 
 //    @Test
 //    public void testAngleRadians(){

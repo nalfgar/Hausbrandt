@@ -10,6 +10,7 @@ import static java.lang.Math.*;
 @AllArgsConstructor
 public class Point {
     final double PI2 = 2 * PI;
+    final double RAD2GRAD = 200 / PI;
 
 
     private double x;
@@ -50,8 +51,8 @@ public class Point {
         return normalizeAngle(atan2(dY, dX));
     }
 
-    public double azimuthGradians(Point endPoint) {
-        return (200/PI) * azimuthRadians(endPoint);
+    public double azimuthGrad(Point endPoint) {
+        return azimuthRadians(endPoint) * RAD2GRAD;
     }
 
 //    TODO methods below does not work correct
