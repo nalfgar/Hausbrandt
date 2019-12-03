@@ -55,13 +55,12 @@ public class Point {
         return azimuthRadians(endPoint) * RAD2GRAD;
     }
 
-//    TODO methods below does not work correct
-    public double angleRadians(Point leftPoint, Point rightPoint) {
+    public double angleRad(Point leftPoint, Point rightPoint) {
         double angle = this.azimuthRadians(rightPoint) - this.azimuthRadians(leftPoint);
         return normalizeAngle(angle);
     }
-//
-//    public double angleGradians(Point leftPoint, Point rightPoint) {
-//        return (200/PI) * angleRadians(leftPoint, rightPoint);
-//    }
+
+    public double angleGrad(Point leftPoint, Point rightPoint) {
+        return (200/PI) * angleRad(leftPoint, rightPoint);
+    }
 }

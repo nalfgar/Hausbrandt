@@ -1,5 +1,6 @@
 package pl.strojecki;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -14,17 +15,20 @@ public class TestPoint {
     private final double QUARTER_PI = Math.PI / 4;
     private final double TWO_PI = Math.PI * 2;
 
+    Point o, a, b, c, d, e, f, g, h;
 
-    Point o = new Point(0.0, 0.0);
-    Point a = new Point(1.0, 0.0);
-    Point b = new Point(1.0, 1.0);
-    Point c = new Point(0.0, 1.0);
-    Point d = new Point(-1.0, 1.0);
-    Point e = new Point(-1.0, 0.0);
-    Point f = new Point(-1.0, -1.0);
-    Point g = new Point(0.0, -1.0);
-    Point h = new Point(1.0, -1.0);
-
+    @Before
+    public void setup() {
+        o = new Point(0.0, 0.0);
+        a = new Point(1.0, 0.0);
+        b = new Point(1.0, 1.0);
+        c = new Point(0.0, 1.0);
+        d = new Point(-1.0, 1.0);
+        e = new Point(-1.0, 0.0);
+        f = new Point(-1.0, -1.0);
+        g = new Point(0.0, -1.0);
+        h = new Point(1.0, -1.0);
+    }
 
     @Test
     public void testDeltas() {
@@ -75,23 +79,25 @@ public class TestPoint {
     }
 
     @Test
-    public void testAngleRadians(){
-        assertEquals(QUARTER_PI, o.angleRadians(a, b), deltaAngle);
-        assertEquals(HALF_PI, o.angleRadians(a, c), deltaAngle);
-        assertEquals(HALF_PI + QUARTER_PI, o.angleRadians(a, d), deltaAngle);
-        assertEquals(PI, o.angleRadians(a, e), deltaAngle);
-        assertEquals(PI + QUARTER_PI, o.angleRadians(a, f), deltaAngle);
-        assertEquals(PI + HALF_PI, o.angleRadians(a, g), deltaAngle);
-        assertEquals(TWO_PI - QUARTER_PI, o.angleRadians(a, h), deltaAngle);
+    public void testAngleRad(){
+        assertEquals(QUARTER_PI, o.angleRad(a, b), deltaAngle);
+        assertEquals(HALF_PI, o.angleRad(a, c), deltaAngle);
+        assertEquals(HALF_PI + QUARTER_PI, o.angleRad(a, d), deltaAngle);
+        assertEquals(PI, o.angleRad(a, e), deltaAngle);
+        assertEquals(PI + QUARTER_PI, o.angleRad(a, f), deltaAngle);
+        assertEquals(PI + HALF_PI, o.angleRad(a, g), deltaAngle);
+        assertEquals(TWO_PI - QUARTER_PI, o.angleRad(a, h), deltaAngle);
     }
 
-//    @Test
-//    public void testAngleGradianss(){
-//        assertEquals(86.07910, a.angleGradians(b, c), deltaAngle);
-//        assertEquals(90.03041, a.angleGradians(c, d), deltaAngle);
-//        assertEquals(148.5197, a.angleGradians(d, e), deltaAngle);
-//        assertEquals(251.4802, a.angleGradians(e, d), deltaAngle);
-////        assertEquals(75.3707, a.angleGradians(e, b), deltaAngle);
-//    }
+    @Test
+    public void testAngleGrad(){
+        assertEquals(50.0, o.angleGrad(a, b), deltaAngle);
+        assertEquals(100.0, o.angleGrad(a, c), deltaAngle);
+        assertEquals(150.0, o.angleGrad(a, d), deltaAngle);
+        assertEquals(200.0, o.angleGrad(a, e), deltaAngle);
+        assertEquals(250.0, o.angleGrad(a, f), deltaAngle);
+        assertEquals(300.0, o.angleGrad(a, g), deltaAngle);
+        assertEquals(350.0, o.angleGrad(a, h), deltaAngle);
+    }
 
 }
