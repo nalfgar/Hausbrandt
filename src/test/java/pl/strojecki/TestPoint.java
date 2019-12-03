@@ -121,5 +121,17 @@ public class TestPoint {
         assertEquals(200.0, o.angleGrad(f, b), deltaAngle);
         assertEquals(150.0, o.angleGrad(g, b), deltaAngle);
         assertEquals(100.0, o.angleGrad(h, b), deltaAngle);
+
+        assertEquals(50.0, o.angleGrad(c, d), deltaAngle);
+        assertEquals(100.0, o.angleGrad(c, e), deltaAngle);
+        assertEquals(150.0, o.angleGrad(c, f), deltaAngle);
+        assertEquals(200.0, o.angleGrad(c, g), deltaAngle);
+        assertEquals(250.0, o.angleGrad(c, h), deltaAngle);
+
+        assertEquals(350.0, o.angleGrad(d, c), deltaAngle);
+        assertEquals(300.0, o.angleGrad(e, c), deltaAngle);
+        assertEquals(250.0, o.angleGrad(f, c), deltaAngle);
+        assertEquals(200.0, o.angleGrad(g, c), deltaAngle);
+        assertEquals(150.0, o.angleGrad(h, c), deltaAngle);
     }
 }
