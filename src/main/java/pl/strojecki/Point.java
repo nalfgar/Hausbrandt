@@ -9,9 +9,17 @@ import static java.lang.Math.*;
 @Data
 @AllArgsConstructor
 public class Point {
+    final double PI2 = 2 * PI;
+    final double RAD2GRAD = 200 / PI;
+
+
     private double x;
     private double y;
     private double z;
+
+    public Point(double x, double y) {
+        this(x, y, 0.0);
+    }
 
     public double dX(Point endPoint) {
         return endPoint.getX() - this.getX();
@@ -22,8 +30,14 @@ public class Point {
     }
 
     private double normalizeAngle(double angle) {
-        return angle  < 0.0 ? (2 * PI) + angle : angle;
-    }
+        while (angle < 0.0) {
+            angle += PI2;
+        }
+        while (angle >= PI2) {
+            angle -= PI2;
+        }
+        return angle;
+        }
 
     public double distance(Point endPoint) {
         double dX = dX(endPoint);
@@ -37,22 +51,16 @@ public class Point {
         return normalizeAngle(atan2(dY, dX));
     }
 
-    public double azimuthGradians(Point endPoint) {
-        return (200/PI) * azimuthRadians(endPoint);
+    public double azimuthGrad(Point endPoint) {
+        return azimuthRadians(endPoint) * RAD2GRAD;
     }
 
-//    TODO methods below does not work correct
-//    public double angleRadians(Point leftPoint, Point rightPoint) {
-//        double dXLeft = dX(leftPoint);
-//        double dYLeft = dY(leftPoint);
-//        double dXRight = dX(rightPoint);
-//        double dYRight = dY(rightPoint);
-//        SimpleForm angleForm = new SimpleForm(dXLeft, dYLeft, dXRight, dYRight);
-//        double angle =  atan(angleForm.f0());
-//        return normalizeAngle(angle);
-//    }
-//
-//    public double angleGradians(Point leftPoint, Point rightPoint) {
-//        return (200/PI) * angleRadians(leftPoint, rightPoint);
-//    }
+    public double angleRad(Point leftPoint, Point rightPoint) {
+        double angle = this.azimuthRadians(rightPoint) - this.azimuthRadians(leftPoint);
+        return normalizeAngle(angle);
+    }
+
+    public double angleGrad(Point leftPoint, Point rightPoint) {
+        return angleRad(leftPoint, rightPoint) * RAD2GRAD;
+    }
 }
