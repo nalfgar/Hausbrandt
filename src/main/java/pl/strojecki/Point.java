@@ -57,12 +57,7 @@ public class Point {
 
 //    TODO methods below does not work correct
     public double angleRadians(Point leftPoint, Point rightPoint) {
-        double dXLeft = dX(leftPoint);
-        double dYLeft = dY(leftPoint);
-        double dXRight = dX(rightPoint);
-        double dYRight = dY(rightPoint);
-        SimpleForm angleForm = new SimpleForm(dXLeft, dYLeft, dXRight, dYRight);
-        double angle =  atan(angleForm.f0());
+        double angle = this.azimuthRadians(rightPoint) - this.azimuthRadians(leftPoint);
         return normalizeAngle(angle);
     }
 //
