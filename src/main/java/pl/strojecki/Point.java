@@ -61,6 +61,6 @@ public class Point {
     }
 
     public double angleGrad(Point leftPoint, Point rightPoint) {
-        return (200/PI) * angleRad(leftPoint, rightPoint);
+        return angleRad(leftPoint, rightPoint) * RAD2GRAD;
     }
 }

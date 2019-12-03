@@ -69,6 +69,7 @@ public class TestPoint {
 
     @Test
     public void testAzimuthGrads(){
+//        expected angles in gradians (gons)
         assertEquals(0.0, o.azimuthGrad(a), deltaAngle);
         assertEquals(50.0, o.azimuthGrad(b), deltaAngle);
         assertEquals(100.0, o.azimuthGrad(c), deltaAngle);
@@ -81,6 +82,7 @@ public class TestPoint {
 
     @Test
     public void testAngleRad(){
+//        expected angles in radians
         assertEquals(QUARTER_PI, o.angleRad(a, b), deltaAngle);
         assertEquals(HALF_PI, o.angleRad(a, c), deltaAngle);
         assertEquals(HALF_PI + QUARTER_PI, o.angleRad(a, d), deltaAngle);
@@ -92,6 +94,7 @@ public class TestPoint {
 
     @Test
     public void testAngleGrad(){
+//        expected angles in gradians (gons)
         assertEquals(50.0, o.angleGrad(a, b), deltaAngle);
         assertEquals(100.0, o.angleGrad(a, c), deltaAngle);
         assertEquals(150.0, o.angleGrad(a, d), deltaAngle);
