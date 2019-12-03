@@ -2,6 +2,7 @@ package pl.strojecki;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
 
@@ -75,7 +76,7 @@ public class TestPoint {
         assertEquals(200.0, o.azimuthGrad(e), deltaAngle);
         assertEquals(250.0, o.azimuthGrad(f), deltaAngle);
         assertEquals(300.0, o.azimuthGrad(g), deltaAngle);
-        assertEquals(350, o.azimuthGrad(h), deltaAngle);
+        assertEquals(350.0, o.azimuthGrad(h), deltaAngle);
     }
 
     @Test
@@ -98,6 +99,27 @@ public class TestPoint {
         assertEquals(250.0, o.angleGrad(a, f), deltaAngle);
         assertEquals(300.0, o.angleGrad(a, g), deltaAngle);
         assertEquals(350.0, o.angleGrad(a, h), deltaAngle);
-    }
 
+        assertEquals(350.0, o.angleGrad(b, a), deltaAngle);
+        assertEquals(300.0, o.angleGrad(c, a), deltaAngle);
+        assertEquals(250.0, o.angleGrad(d, a), deltaAngle);
+        assertEquals(200.0, o.angleGrad(e, a), deltaAngle);
+        assertEquals(150.0, o.angleGrad(f, a), deltaAngle);
+        assertEquals(100.0, o.angleGrad(g, a), deltaAngle);
+        assertEquals(50.0, o.angleGrad(h, a), deltaAngle);
+
+        assertEquals(50.0, o.angleGrad(b, c), deltaAngle);
+        assertEquals(100.0, o.angleGrad(b, d), deltaAngle);
+        assertEquals(150.0, o.angleGrad(b, e), deltaAngle);
+        assertEquals(200.0, o.angleGrad(b, f), deltaAngle);
+        assertEquals(250.0, o.angleGrad(b, g), deltaAngle);
+        assertEquals(300.0, o.angleGrad(b, h), deltaAngle);
+
+        assertEquals(350.0, o.angleGrad(c, b), deltaAngle);
+        assertEquals(300.0, o.angleGrad(d, b), deltaAngle);
+        assertEquals(250.0, o.angleGrad(e, b), deltaAngle);
+        assertEquals(200.0, o.angleGrad(f, b), deltaAngle);
+        assertEquals(150.0, o.angleGrad(g, b), deltaAngle);
+        assertEquals(100.0, o.angleGrad(h, b), deltaAngle);
+    }
 }
