@@ -12,12 +12,22 @@ public class Tools {
 
     static final double RAD2GRAD = 200 / PI;
 
-    static double normalizeAngle(double angle) {
+    static double normalizeRad(double angle) {
         while (angle < 0.0) {
             angle += PI2;
         }
         while (angle >= PI2) {
             angle -= PI2;
+        }
+        return angle;
+    }
+
+    static double normalizeGrad(double angle) {
+        while (angle < 0.0) {
+            angle += 400.0;
+        }
+        while (angle >= 400.0) {
+            angle -= 400.0;
         }
         return angle;
     }
@@ -33,10 +43,21 @@ public class Tools {
     static double azimuthRad(Point beginPoint, Point endPoint){
         double dX = dX(beginPoint, endPoint);
         double dY = dY(beginPoint, endPoint);
-        return normalizeAngle(atan2(dY, dX));
+        return normalizeRad(atan2(dY, dX));
     }
 
     static double azimuthGrad(Point beginPoint, Point endPoint){
         return azimuthRad(beginPoint, endPoint) * RAD2GRAD;
     }
+
+    static double angleRad(Point centralPoint, Point leftPoint, Point rightPoint){
+        return azimuthRad(centralPoint, rightPoint) - azimuthRad(centralPoint, leftPoint);
+    }
+
+    static double angleGrad(Point centralPoint, Point leftPoint, Point rightPoint){
+        return normalizeGrad(angleRad(centralPoint, leftPoint, rightPoint) * RAD2GRAD);
+    }
+
+
+
 }

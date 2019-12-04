@@ -42,11 +42,11 @@ public class Point {
     }
 
     public double angleRad(Point leftPoint, Point rightPoint) {
-        double angle = this.azimuthRad(rightPoint) - this.azimuthRad(leftPoint);
-        return normalizeAngle(angle);
+        double angle = Tools.azimuthRad(this, rightPoint) - Tools.azimuthRad(this, leftPoint);
+        return normalizeRad(angle);
     }
 
     public double angleGrad(Point leftPoint, Point rightPoint) {
-        return angleRad(leftPoint, rightPoint) * RAD2GRAD;
+        return Tools.angleGrad(this, leftPoint, rightPoint);
     }
 }
