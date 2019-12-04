@@ -53,14 +53,14 @@ public class TestPoint {
     @Test
     public void testAzimuthRadians(){
 //        expected angles in radians
-        assertEquals(0.0, o.azimuthRadians(a), deltaAngle);
-        assertEquals(QUARTER_PI, o.azimuthRadians(b), deltaAngle);
-        assertEquals(HALF_PI, o.azimuthRadians(c), deltaAngle);
-        assertEquals(HALF_PI + QUARTER_PI, o.azimuthRadians(d), deltaAngle);
-        assertEquals(PI, o.azimuthRadians(e), deltaAngle);
-        assertEquals(PI + QUARTER_PI, o.azimuthRadians(f), deltaAngle);
-        assertEquals(PI + HALF_PI, o.azimuthRadians(g), deltaAngle);
-        assertEquals(TWO_PI - QUARTER_PI, o.azimuthRadians(h), deltaAngle);
+        assertEquals(0.0, o.azimuthRad(a), deltaAngle);
+        assertEquals(QUARTER_PI, o.azimuthRad(b), deltaAngle);
+        assertEquals(HALF_PI, o.azimuthRad(c), deltaAngle);
+        assertEquals(HALF_PI + QUARTER_PI, o.azimuthRad(d), deltaAngle);
+        assertEquals(PI, o.azimuthRad(e), deltaAngle);
+        assertEquals(PI + QUARTER_PI, o.azimuthRad(f), deltaAngle);
+        assertEquals(PI + HALF_PI, o.azimuthRad(g), deltaAngle);
+        assertEquals(TWO_PI - QUARTER_PI, o.azimuthRad(h), deltaAngle);
     }
 
     @Test

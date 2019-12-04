@@ -33,16 +33,16 @@ public class Point {
         return sqrt((dX*dX) + (dY*dY));
     }
 
-    public double azimuthRadians(Point endPoint) {
+    public double azimuthRad(Point endPoint) {
         return Tools.azimuthRad(this, endPoint);
     }
 
     public double azimuthGrad(Point endPoint) {
-        return azimuthRadians(endPoint) * RAD2GRAD;
+        return Tools.azimuthGrad(this, endPoint);
     }
 
     public double angleRad(Point leftPoint, Point rightPoint) {
-        double angle = this.azimuthRadians(rightPoint) - this.azimuthRadians(leftPoint);
+        double angle = this.azimuthRad(rightPoint) - this.azimuthRad(leftPoint);
         return normalizeAngle(angle);
     }
 
