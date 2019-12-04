@@ -28,15 +28,13 @@ public class Point {
 
 
     public double distance(Point endPoint) {
-        double dX = dX(endPoint);
-        double dY = dY(endPoint);
+        double dX = Tools.dX(this, endPoint);
+        double dY = Tools.dY(this, endPoint);
         return sqrt((dX*dX) + (dY*dY));
     }
 
     public double azimuthRadians(Point endPoint) {
-        double dX = dX(endPoint);
-        double dY = dY(endPoint);
-        return normalizeAngle(atan2(dY, dX));
+        return Tools.azimuthRad(this, endPoint);
     }
 
     public double azimuthGrad(Point endPoint) {
