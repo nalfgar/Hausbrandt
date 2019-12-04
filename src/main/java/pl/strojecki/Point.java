@@ -4,15 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import static java.lang.Math.*;
+import static pl.strojecki.Tools.PI2;
+import static pl.strojecki.Tools.RAD2GRAD;
 
 
 @Data
 @AllArgsConstructor
 public class Point {
-    final double PI2 = 2 * PI;
-    final double RAD2GRAD = 200 / PI;
-
-
     private double x;
     private double y;
     private double z;
