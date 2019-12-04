@@ -2,19 +2,15 @@ package pl.strojecki;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.Parameterized;
 
+import static java.lang.Math.PI;
 import static org.junit.Assert.assertEquals;
+import static pl.strojecki.Tools.*;
 
 
 public class TestPoint {
     private final double delta = 0.01;
     private final double deltaAngle = 0.0001;
-
-    private final double PI = Math.PI;
-    private final double HALF_PI = Math.PI / 2;
-    private final double QUARTER_PI = Math.PI / 4;
-    private final double TWO_PI = Math.PI * 2;
 
     Point o, a, b, c, d, e, f, g, h;
 
@@ -57,14 +53,14 @@ public class TestPoint {
     @Test
     public void testAzimuthRadians(){
 //        expected angles in radians
-        assertEquals(0.0, o.azimuthRadians(a), deltaAngle);
-        assertEquals(QUARTER_PI, o.azimuthRadians(b), deltaAngle);
-        assertEquals(HALF_PI, o.azimuthRadians(c), deltaAngle);
-        assertEquals(HALF_PI + QUARTER_PI, o.azimuthRadians(d), deltaAngle);
-        assertEquals(PI, o.azimuthRadians(e), deltaAngle);
-        assertEquals(PI + QUARTER_PI, o.azimuthRadians(f), deltaAngle);
-        assertEquals(PI + HALF_PI, o.azimuthRadians(g), deltaAngle);
-        assertEquals(TWO_PI - QUARTER_PI, o.azimuthRadians(h), deltaAngle);
+        assertEquals(0.0, o.azimuthRad(a), deltaAngle);
+        assertEquals(QUARTER_PI, o.azimuthRad(b), deltaAngle);
+        assertEquals(HALF_PI, o.azimuthRad(c), deltaAngle);
+        assertEquals(HALF_PI + QUARTER_PI, o.azimuthRad(d), deltaAngle);
+        assertEquals(PI, o.azimuthRad(e), deltaAngle);
+        assertEquals(PI + QUARTER_PI, o.azimuthRad(f), deltaAngle);
+        assertEquals(PI + HALF_PI, o.azimuthRad(g), deltaAngle);
+        assertEquals(TWO_PI - QUARTER_PI, o.azimuthRad(h), deltaAngle);
     }
 
     @Test

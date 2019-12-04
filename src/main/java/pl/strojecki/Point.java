@@ -4,15 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import static java.lang.Math.*;
+import static pl.strojecki.Tools.*;
 
 
 @Data
 @AllArgsConstructor
 public class Point {
-    final double PI2 = 2 * PI;
-    final double RAD2GRAD = 200 / PI;
-
-
     private double x;
     private double y;
     private double z;
@@ -22,45 +19,34 @@ public class Point {
     }
 
     public double dX(Point endPoint) {
-        return endPoint.getX() - this.getX();
+        return Tools.dX(this, endPoint);
     }
 
     public double dY(Point endPoint) {
-        return endPoint.getY() - this.getY();
+        return Tools.dY(this, endPoint);
     }
 
-    private double normalizeAngle(double angle) {
-        while (angle < 0.0) {
-            angle += PI2;
-        }
-        while (angle >= PI2) {
-            angle -= PI2;
-        }
-        return angle;
-        }
 
     public double distance(Point endPoint) {
-        double dX = dX(endPoint);
-        double dY = dY(endPoint);
+        double dX = Tools.dX(this, endPoint);
+        double dY = Tools.dY(this, endPoint);
         return sqrt((dX*dX) + (dY*dY));
     }
 
-    public double azimuthRadians(Point endPoint) {
-        double dX = dX(endPoint);
-        double dY = dY(endPoint);
-        return normalizeAngle(atan2(dY, dX));
+    public double azimuthRad(Point endPoint) {
+        return Tools.azimuthRad(this, endPoint);
     }
 
     public double azimuthGrad(Point endPoint) {
-        return azimuthRadians(endPoint) * RAD2GRAD;
+        return Tools.azimuthGrad(this, endPoint);
     }
 
     public double angleRad(Point leftPoint, Point rightPoint) {
-        double angle = this.azimuthRadians(rightPoint) - this.azimuthRadians(leftPoint);
-        return normalizeAngle(angle);
+        double angle = Tools.azimuthRad(this, rightPoint) - Tools.azimuthRad(this, leftPoint);
+        return normalizeRad(angle);
     }
 
     public double angleGrad(Point leftPoint, Point rightPoint) {
-        return angleRad(leftPoint, rightPoint) * RAD2GRAD;
+        return Tools.angleGrad(this, leftPoint, rightPoint);
     }
 }
