@@ -2,7 +2,6 @@ package pl.strojecki;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.Parameterized;
 
 import static java.lang.Math.PI;
 import static org.junit.Assert.assertEquals;

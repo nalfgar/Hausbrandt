@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import static java.lang.Math.*;
-import static pl.strojecki.Tools.PI2;
-import static pl.strojecki.Tools.RAD2GRAD;
+import static pl.strojecki.Tools.*;
 
 
 @Data
@@ -20,22 +19,13 @@ public class Point {
     }
 
     public double dX(Point endPoint) {
-        return endPoint.getX() - this.getX();
+        return Tools.dX(this, endPoint);
     }
 
     public double dY(Point endPoint) {
-        return endPoint.getY() - this.getY();
+        return Tools.dY(this, endPoint);
     }
 
-    private double normalizeAngle(double angle) {
-        while (angle < 0.0) {
-            angle += PI2;
-        }
-        while (angle >= PI2) {
-            angle -= PI2;
-        }
-        return angle;
-        }
 
     public double distance(Point endPoint) {
         double dX = dX(endPoint);
