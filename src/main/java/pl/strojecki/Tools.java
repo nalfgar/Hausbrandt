@@ -63,6 +63,7 @@ public class Tools {
         double azimuth = baseAzimuth + angleRad;
         double dX = distance * cos(azimuth);
         double dY = distance * sin(azimuth);
+
         return new Point(beginPoint.getX() + dX, beginPoint.getY() + dY);
     }
 
