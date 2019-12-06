@@ -1,7 +1,7 @@
 package pl.strojecki;
 
-import static java.lang.Math.PI;
-import static java.lang.Math.atan2;
+import static java.lang.Math.*;
+import static java.lang.Math.sin;
 
 public class Tools {
 
@@ -10,7 +10,9 @@ public class Tools {
     static final double QUARTER_PI = Math.PI / 4;
     static final double TWO_PI = Math.PI * 2;
 
-    static final double RAD2GRAD = 200 / PI;
+    static final double GRAD2RAD = PI / 200.0;
+    static final double RAD2GRAD = 200.0 / PI;
+
 
     static double normalizeRad(double angle) {
         while (angle < 0.0) {
@@ -58,6 +60,23 @@ public class Tools {
         return normalizeGrad(angleRad(centralPoint, leftPoint, rightPoint) * RAD2GRAD);
     }
 
+    static Point polar(Point beginPoint, Point endPoint, double angleRad, double distance) {
+        double baseAzimuth = azimuthRad(beginPoint, endPoint);
+        double azimuth = baseAzimuth + angleRad;
+        double dX = distance * cos(azimuth);
+        double dY = distance * sin(azimuth);
+
+        return new Point(beginPoint.getX() + dX, beginPoint.getY() + dY);
+    }
 
 
+    public static Point polarGrad(Point beginPoint, Point endPoint, double angleGrad, double distance) {
+        double baseAzimuth = azimuthRad(beginPoint, endPoint);
+        double azimuth = baseAzimuth + (angleGrad * GRAD2RAD);
+        double dX = distance * cos(azimuth);
+        double dY = distance * sin(azimuth);
+
+        return new Point(beginPoint.getX() + dX, beginPoint.getY() + dY);
+
+    }
 }

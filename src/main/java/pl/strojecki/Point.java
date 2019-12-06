@@ -49,4 +49,5 @@ public class Point {
     public double angleGrad(Point leftPoint, Point rightPoint) {
         return Tools.angleGrad(this, leftPoint, rightPoint);
     }
+
 }
