@@ -55,4 +55,42 @@ public class TestTools {
         assertEquals(expectedPoint.getX(), actualPoint.getX(), delta);
         assertEquals(expectedPoint.getY(), actualPoint.getY(), delta);
     }
+
+    @Test
+    public void testPolarGradsInFirstQuarter(){
+        Point expectedPoint = new Point(1.00, 1.00);
+        Point actualPoint = Tools.polarGrad(beginPoint, endPoint, 0.0, 1.41);
+
+        assertEquals(expectedPoint.getX(), actualPoint.getX(), delta);
+        assertEquals(expectedPoint.getY(), actualPoint.getY(), delta);
+    }
+
+    @Test
+    public void testPolarGradsInSecondQuarter(){
+        Point expectedPoint = new Point(-1.00, 1.00);
+        Point actualPoint = Tools.polarGrad(beginPoint, endPoint, 100.0, 1.41);
+
+        assertEquals(expectedPoint.getX(), actualPoint.getX(), delta);
+        assertEquals(expectedPoint.getY(), actualPoint.getY(), delta);
+    }
+
+    @Test
+    public void testPolarGradsInThirdQuarter(){
+        Point expectedPoint = new Point(-1.00, -1.00);
+        Point actualPoint = Tools.polarGrad(beginPoint, endPoint, 200.0, 1.41);
+
+        assertEquals(expectedPoint.getX(), actualPoint.getX(), delta);
+        assertEquals(expectedPoint.getY(), actualPoint.getY(), delta);
+    }
+
+    @Test
+    public void testPolarGradsInFourthQuarter(){
+        Point expectedPoint = new Point(1.00, -1.00);
+        Point actualPoint = Tools.polarGrad(beginPoint, endPoint, 300.0, 1.41);
+
+        assertEquals(expectedPoint.getX(), actualPoint.getX(), delta);
+        assertEquals(expectedPoint.getY(), actualPoint.getY(), delta);
+    }
+
+
 }
